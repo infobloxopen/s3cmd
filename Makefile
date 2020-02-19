@@ -1,5 +1,6 @@
 S3CMD_VERSION	= $(shell cat VERSION)
-IMAGE_VERSION	= $(S3CMD_VERSION)-$(shell git describe --always --tags)
+IMAGE_VERSION	= $(S3CMD_VERSION)-$(shell git describe --always --tags --long)
+
 
 default: Dockerfile
 	docker build -t infoblox/s3cmd:$(IMAGE_VERSION) \
